@@ -13,7 +13,9 @@ end
 function M:update_status()
   local venv = require('selectvenv').get_active_venv()
   if venv then
-    return venv
+    local parts = vim.fn.split(venv, "/")
+    local lastPart = parts[#parts]
+    return lastPart
   else
     return ''
   end
