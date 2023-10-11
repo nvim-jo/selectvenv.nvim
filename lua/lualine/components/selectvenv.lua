@@ -20,7 +20,7 @@ function M:update_status()
     local lastPart = parts[#parts]
     return lastPart
   else
-    return 'Select Venv'
+    return 'Select Virtual Environment'
   end
 end
 
