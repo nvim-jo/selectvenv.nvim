@@ -10,6 +10,10 @@ function M:init(options)
   M.super.init(self, options)
 end
 
+function M:on_click()
+  return require('selectvenv').open()
+end
+
 function M:update_status()
   local venv = require('selectvenv').get_active_venv()
   if venv then
@@ -17,7 +21,7 @@ function M:update_status()
     local lastPart = parts[#parts]
     return lastPart
   else
-    return ''
+    return 'Select Venv'
   end
 end
 
