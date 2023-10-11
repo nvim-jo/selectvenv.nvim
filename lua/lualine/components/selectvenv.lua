@@ -3,15 +3,14 @@ local M = require('lualine.component'):extend()
 local default_opts = {
   icon = "",
   color = { fg = "#CDD6F4" },
+  on_click = function()
+    require('selectvenv').open()
+  end,
 }
 
 function M:init(options)
   options = vim.tbl_deep_extend("keep", options or {}, default_opts)
   M.super.init(self, options)
-end
-
-function M:on_click()
-  return require('selectvenv').open()
 end
 
 function M:update_status()
