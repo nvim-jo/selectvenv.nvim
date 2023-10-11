@@ -93,7 +93,7 @@ function M.on_read(err, data)
     for _, row in pairs(rows) do
       if row ~= "" then
         dbg("Found venv in parent search: " .. row)
-        table.insert(M.results, { icon = "󰅬", path = utils.remove_last_slash(row), source = "Search" })
+        table.insert(M.results, { icon = "", path = utils.remove_last_slash(row), source = "Search" })
       end
     end
   end
@@ -118,7 +118,7 @@ function M.open()
     },
   })
 
-  local title = "Virtual environments"
+  local title = "Virtual Environments"
 
   if config.settings.auto_refresh == false then
     title = title .. " (ctrl-r to refresh)"

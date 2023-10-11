@@ -1,14 +1,14 @@
 local M = {}
 
 local config = require("selectvenv.config")
-local msg_prefix = "VenvSelect: "
+local msg_prefix = "SelectVenv: "
 
 function M.notify(msg)
-  vim.notify(msg_prefix .. msg, vim.log.levels.INFO, { title = "VenvSelect" })
+  vim.notify(msg_prefix .. msg, vim.log.levels.INFO, { title = "SelectVenv" })
 end
 
 function M.error(msg)
-  vim.notify(msg_prefix .. msg, vim.log.levels.ERROR, { title = "VenvSelect" })
+  vim.notify(msg_prefix .. msg, vim.log.levels.ERROR, { title = "SelectVenv" })
 end
 
 function M.fd_or_fdfind_exists()
